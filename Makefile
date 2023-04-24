@@ -2,24 +2,26 @@ CC := gcc
 CFLAGS := -Wall -Wextra -Werror
 INCDIRS = ./libft
 NAME := libftprintf.a
-OBJS = ft_printf.o / ft_itoaetc.C
+OBJS = ft_printf.o \
+		ft_itoaetc.o
+ARFLAGS = cr
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar cr $@ $^
-	$(MAKE) -C libft
+	$(AR) $(ARFLAGS) $@ $^
+	$(MAKE) -C $(INCDIRS)
 
 clean:
 	rm -f $(OBJS)
-	$(MAKE) clean -C libft
+	$(MAKE) clean -C $(INCDIRS)
 
 
 fclean: clean
 	rm -f $(NAME)
-	$(MAKE) fclean -C libft
+	$(MAKE) fclean -C $(INCDIRS)
 
 re: fclean all
-	$(MAKE) re -C libft
+	$(MAKE) re -C $(INCDIRS)
 
 .PHONY:	all clean fclean re

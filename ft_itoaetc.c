@@ -1,4 +1,5 @@
 #include "ft_printf.h"
+#include "./libft/libft.h"
 
 char	*ft_strrev(char *tmp, int size, int flag)
 {
@@ -45,7 +46,7 @@ char	*ft_itoa_ten(int n)
 		n /= 10;
 		i++;
 	}
-	return(ft_strrev(str, ft_strlen(str) + minus, minus));
+	return (ft_strrev(str, ft_strlen(str) + minus, minus));
 }
 
 char	*ft_itoa_unsigned(unsigned int n)
@@ -63,10 +64,10 @@ char	*ft_itoa_unsigned(unsigned int n)
 		n /= 10;
 		i++;
 	}
-	return(ft_strrev(str, ft_strlen(str), 0));
+	return (ft_strrev(str, ft_strlen(str), 0));
 }
 
-char	*ft_itoa_xX(unsigned int n, int upper)
+char	*ft_itoa_x(unsigned int n, int upper)
 {
 	char	str[12];
 	int		i;
@@ -84,7 +85,7 @@ char	*ft_itoa_xX(unsigned int n, int upper)
 		n /= 16;
 		i++;
 	}
-	return(ft_strrev(str, ft_strlen(str), 0));
+	return (ft_strrev(str, ft_strlen(str), 0));
 }
 
 char	*ft_pointer(size_t n)
@@ -98,7 +99,6 @@ char	*ft_pointer(size_t n)
 		str[0] = '0';
 	while (n > 0)
 	{
-		// printf("%u\n", n);
 		if (n % 16 < 10)
 			str[i] = n % 16 + '0';
 		else
@@ -106,5 +106,5 @@ char	*ft_pointer(size_t n)
 		n /= 16;
 		i++;
 	}
-	return(ft_strrev(str, ft_strlen(str) + 2, 2));
+	return (ft_strrev(str, ft_strlen(str) + 2, 2));
 }
