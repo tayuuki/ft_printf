@@ -1,5 +1,5 @@
 #include "ft_printf.h"
-#include "./libft/libft.h"
+#include "libft.h"
 
 char	*ft_strrev(char *tmp, int size, int flag)
 {

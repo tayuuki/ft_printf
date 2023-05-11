@@ -1,42 +1,42 @@
 #include "ft_printf.h"
-#include "libft/libft.h"
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
+// size_t	ft_strlen(const char *s)
+// {
+// 	size_t	i;
 
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	while (s[i])
+// 		i++;
+// 	return (i);
+// }
 
-void	ft_bzero(void *s, size_t n)
-{
-	char	*dest;
-	int		count;
+// void	ft_bzero(void *s, size_t n)
+// {
+// 	char	*dest;
+// 	int		count;
 
-	dest = s;
-	count = -1;
-	while (n--)
-		dest[++count] = '\0';
-}
+// 	dest = s;
+// 	count = -1;
+// 	while (n--)
+// 		dest[++count] = '\0';
+// }
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
-{
-	size_t	i;
+// size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+// {
+// 	size_t	i;
 
-	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[i] != '\0' && i + 1 < size)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
-}
+// 	i = 0;
+// 	if (size == 0)
+// 		return (ft_strlen(src));
+// 	while (src[i] != '\0' && i + 1 < size)
+// 	{
+// 		dst[i] = src[i];
+// 		i++;
+// 	}
+// 	dst[i] = '\0';
+// 	return (ft_strlen(src));
+// }
 
 int	ft_abs(int num)
 {
