@@ -1,30 +1,41 @@
-#include "ft_printf.h"
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoaetc.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tayuuki <tayuuki@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/16 20:34:08 by tayuuki           #+#    #+#             */
+/*   Updated: 2023/05/16 20:34:09 by tayuuki          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_strrev(char *tmp, int size, int flag)
+#include "ft_printf.h"
+
+char	*ft_strrev(char *str, int size, int flag)
 {
 	int		i;
-	char	*str;
+	char	*tmp;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char) * (size + 1));
-	if (!str)
+	tmp = (char *)malloc(sizeof(char) * (size + 1));
+	if (!tmp)
 		return (NULL);
-	ft_strlcpy(str, tmp, size + 1);
+	ft_strlcpy(tmp, str, size + 1);
 	if (flag == 1)
-		str[i++] = '-';
+		tmp[i++] = '-';
 	else if (flag == 2)
 	{
-		str[i++] = '0';
-		str[i++] = 'x';
+		tmp[i++] = '0';
+		tmp[i++] = 'x';
 	}
 	while (i < size)
 	{
-		str[i] = tmp[size - i - 1];
+		tmp[i] = str[size - i - 1];
 		i++;
 	}
-	str[i] = '\0';
-	return (str);
+	tmp[i] = '\0';
+	return (tmp);
 }
 
 char	*ft_itoa_ten(int n)

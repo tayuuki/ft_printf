@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tayuuki <tayuuki@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/16 20:36:42 by tayuuki           #+#    #+#             */
+/*   Updated: 2023/05/16 20:36:43 by tayuuki          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <libc.h>
-#include <stdarg.h>
-#include <stdbool.h>
+# include <libc.h>
+# include <stdarg.h>
+# include <stdbool.h>
 
 char	*ft_strrev(char *tmp, int size, int flag);
 char	*ft_itoa_ten(int n);
